@@ -13,16 +13,16 @@ int main()
     float bmi= peso/a;
 
     if(bmi<18.5){
-        printf("Bajo peso");
+        printf("Bajo peso, su imc es:%.2f",bmi);
     }
     if(bmi>=18.5 && bmi<=24.9){
-        printf("Normal");
+        printf("Normal, su imc es:%.2f",bmi);
     }
     if(bmi>=25.0 && bmi<=29.9){
-        printf("Sobrepeso");
+        printf("Sobrepeso, su imc es:%.2f",bmi);
     }
     if (bmi>=30){
-        printf("Obesidad");
+        printf("Obesidad, su imc es:%.2f",bmi);
     }
 
     return 0;
