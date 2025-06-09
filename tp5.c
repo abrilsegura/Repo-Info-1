@@ -10,7 +10,7 @@ do{
     printf("Ingrese la cantidad de notas:\n");
     scanf("%d", &cantnotas);
     if(cantnotas<0){
-        printf("No se permiten numeros negativos, ingrese nuevamente");
+        printf("Error\n");
     }
 } while (cantnotas<0);
 
