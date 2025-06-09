@@ -2,17 +2,27 @@
 
 int main()
 {   
-    float peso, altura;
-    printf("Ingrese su peso en kg:\n");
-    scanf("%f",&peso);
+    float peso, altura,bmi;
+   
+    do{
+        printf("Ingrese su peso en kg:\n");
+        scanf("%f",&peso);
+        if (peso<0){
+            printf("Error\n");
+        }
+    } while (peso<0);
 
-    printf("Ingrese su altura en m:\n");
-    scanf("%f",&altura);
+    do{
+        printf("Ingrese su altura en m:\n");
+        scanf("%f",&altura);
+        if (altura<0){
+            printf("Error\n");
+        }
+    } while (altura<0);
 
-    float a = altura*altura;
-    float bmi= peso/a;
+    bmi= peso/(altura*altura);
 
-    printf("Su índice de masa corporal es: %.2f\n",  bmi);
+     printf("Su índice de masa corporal es: %.2f\n", bmi);
 
     if(bmi<18.5){
         printf(" Índice| Condición\n <18.5 | Bajo peso\t#\n 18.5 a 24.9 | Normal\n 25.0 a 29.9 | Sobrepeso\n >=30| Obesidad\n");    
