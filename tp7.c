@@ -1,11 +1,12 @@
 #include <stdio.h>
-#define TAM 4
+#define TAM 5
 
 int main ()
 {
     int codigobarra[TAM];
     float precio[TAM];
-    float preciomayor=0,preciomenor=0;
+    float preciomayor=0, preciomenor=0;
+    int codigomenor=0, codigomayor=0;
 
     printf("Ingrese %d productos, se solicitara el codigo y precio\n", TAM);
 
@@ -21,7 +22,11 @@ int main ()
             do{
                 printf("Ingrese el precio: ");
                 scanf("%f",&precio[i]);
-                preciomayor=(precio[i]>preciomayor) ? precio[i]:preciomayor;
+                if(precio[i]>preciomayor){
+                    preciomayor=precio[i];
+                    codigomayor=codigobarra[i];
+                }
+                
                 if(precio[i]<0)
                     printf("Error, el precio no puede ser negativo\n");
             } while (precio[i]<0);
@@ -33,11 +38,13 @@ int main ()
     }
     preciomenor=preciomayor;
     for(int i=0;i<TAM;i++){
-        preciomenor=(precio[i]<preciomenor) ? precio[i]:preciomenor;
+       if(precio[i]<preciomenor){
+        preciomenor=precio[i];
+        codigomenor=codigobarra[i];
+       }
     }
-    
-    printf("El precio mas caro es:%.2f\n",preciomayor);
-    printf("El precio mas barato es:%.2f\n",preciomenor);
+    printf("El precio mas caro es:[%d]\t%.2f\n",codigomayor,preciomayor);
+    printf("El precio mas barato es:[%d]\t%.2f\n",codigomenor,preciomenor);
     return 0;  
 }
 
